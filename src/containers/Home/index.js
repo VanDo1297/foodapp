@@ -9,7 +9,7 @@ function Home(props){
 
     useEffect(() => { 
         props.navigation.setOptions({ 
-            headerTitle: 'bongda',
+            headerTitle: 'Home',
             headerLeft: (
                ()=> <TouchableOpacity onPress={()=>props.navigation.openDrawer()}>
                         <Image style={{marginLeft:10}} source={HambugerImage} />

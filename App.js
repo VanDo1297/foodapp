@@ -8,11 +8,14 @@
 
 import React from 'react';
 import 'react-native-gesture-handler';
-import AppContainer from './src/navigation'
+import AppContainer from './src/navigation';
+import {SafeAreaView} from 'react-native';
 
 function App(){
   return (
-    <AppContainer />
+    <SafeAreaView style={{flex:1}}>
+      <AppContainer />
+    </SafeAreaView>
   )
 };
 

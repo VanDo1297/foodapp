@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import DrawerContainer from './drawer';
+import CategoriesScreen from '../containers/Category';
 import HomeScreen from '../containers/Home';
 import React from 'react';
 
@@ -13,6 +13,16 @@ function MainNavigator() {
             initialRouteName="Home"
         >
             <Stack.Screen name='Home' component={HomeScreen} />
+        </Stack.Navigator>
+    )
+}
+
+function CategoriesStack(){
+    return(
+        <Stack.Navigator
+            initialRouteName="Category"
+        >
+            <Stack.Screen name='Category' component={CategoriesScreen} />
         </Stack.Navigator>
     )
 }
@@ -29,6 +39,7 @@ function DrawerStack() {
             }}
         >
             <Drawer.Screen name='Main' component={MainNavigator} />
+            <Drawer.Screen name='Category' component={CategoriesStack} />
         </Drawer.Navigator>
     )
 } 
