@@ -16,7 +16,7 @@ function Category(props){
         }) 
     }, [])
     return (
-        <View >
+        <View>
             <FlatList
                 data={categories}
                 renderItem={(item)=> CategoryItem(item)}

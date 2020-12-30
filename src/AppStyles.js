@@ -8,3 +8,5 @@ export const recipeNumColums = 2;
 export const RECIPE_ITEM_HEIGHT = 150;
 export const RECIPE_ITEM_MARGIN = 20;
 
+
+export const ingredientNumColums = 3;

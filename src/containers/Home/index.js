@@ -18,6 +18,12 @@ function Home(props){
         }) 
     }, [])
 
+    const onPressRecipeItem =(recipeId)=>{
+        props.navigation.navigate('Details', {
+            itemId: recipeId,
+        });
+    }
+
     return (
         <View>
             <FlatList 
@@ -26,7 +32,7 @@ function Home(props){
                 vertical={true}
                 showsVerticalScrollIndicator={false}
                 numColumns={2}
-                renderItem={(item)=>RecipeItem(item)}
+                renderItem={(item)=> <RecipeItem item={{...item}} onPressRecipeItem={onPressRecipeItem}/>}
             />
         </View>
     )

@@ -4,12 +4,14 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import {RECIPE_ITEM_HEIGHT, RECIPE_ITEM_MARGIN, SCREEN_WIDTH, recipeNumColums} from '../../AppStyles';
 import {mapCatagory} from '../../mapper/recipes';
 function RecipeItem(props){
+    const { onPressRecipeItem}= props;
+    const {item}= props.item
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> onPressRecipeItem(item.recipeId)}>
             <View style={styles.container}>
-                <Image style={styles.image} source={{uri:props.item.photo_url}} />
-                <Text style={styles.recipe_name}>{props.item.title}</Text>
-                <Text style={styles.category_title}>{!!mapCatagory(props.item.categoryId) && mapCatagory(props.item.categoryId).name}</Text>
+                <Image style={styles.image} source={{uri:item.photo_url}} />
+                <Text style={styles.recipe_name}>{item.title}</Text>
+                <Text style={styles.category_title}>{!!mapCatagory(item.categoryId) && mapCatagory(item.categoryId).name}</Text>
             </View>
         </TouchableOpacity>
     )
